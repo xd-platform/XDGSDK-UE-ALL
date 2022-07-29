@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "Demo",
+			"path": "."
+		},
+		{
+			"name": "UE4",
+			"path": "/Users/Shared/Epic Games/UE_4.27"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"files.associations": {
+			"__locale": "cpp",
+			"future": "cpp",
+			"system_error": "cpp",
+			"array": "cpp",
+			"iterator": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"vector": "cpp"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp",
+			"vadimcn.vscode-lldb",
+			"ms-vscode.mono-debug"
+		]
+	}
+}
