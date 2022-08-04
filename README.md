@@ -4,12 +4,11 @@
 ![plugins](./Demo_4.27/image/plugins.png)
 
 
-#### 2.配置iOS数据
-把 `XDGCommon/Source/XDGCommon/iOS/iOSConfigs` 文件夹里的 `GoogleService-Info.plist` 和 `XDG-Info.plist` 配置成自己的文件。
+#### 2.配置
+把 `XDGCommon/Source/XDGCommon/Configs` 文件夹里的 `XDConfig.json`配置成游戏参数 [参数说明](https://docs.xdglobalapi.com/docs/guide/guide_get_started)
 
-把 `XDGCommon/Source/XDGCommon/XDGCommon_iOS_UPL.xml` 里的 `CFBundleURLSchemes`值配置成自己的参数。
+把 `XDGCommon/Source/XDGCommon` 文件夹里的 `XDGCommon_iOS_UPL.xml` 和 `XDGCommon_Android_UPL.xml` 值配置成自己的参数。
 
-#### 3.配置Android数据
 把 `XDGCommon/Source/XDGCommon/Android/assets` 文件夹里的  `XDG_info.json`  
 和 `XDGAccount/Source/XDGAccount/Android/googleJson` 文件夹里的 `google-services.json` 配置成自己的文件。
 
@@ -44,6 +43,7 @@ static void InitSDK();
 // 10 西班牙语
 // 11 土耳其语
 // 12 俄语
+// 13 越南语
 UFUNCTION(BlueprintCallable, Category = "XDGCommon")
 static void SetLanguage(int32 langType);
 
