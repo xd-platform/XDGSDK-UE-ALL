@@ -193,7 +193,6 @@ void XDGCommonIOS::SetCountryRegion(FString region){
 
 void XDGCommonIOS::DevelopInit(int32 num){
     //测试代码--start 
-        
         NSLog(@"初始化num: %d", num);
         if(num == 0){ //海外正式
 
@@ -201,11 +200,9 @@ void XDGCommonIOS::DevelopInit(int32 num){
             [XDGCoreService setDevelopUrl]; 
             
         }else if(num == 2){ //国内正式
-            [XDGCoreService clearAllUserDefaultsData]; 
             [XDGCoreService updateConfigFileName:@"XDConfig-cn.json"]; 
             
         }else if(num == 3){ //国内测试
-            [XDGCoreService clearAllUserDefaultsData]; 
             [XDGCoreService updateConfigFileName:@"XDConfig-cn.json"]; 
             [XDGCoreService setDevelopUrl]; 
         }

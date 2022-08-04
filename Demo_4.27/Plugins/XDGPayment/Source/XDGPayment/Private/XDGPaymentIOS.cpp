@@ -131,6 +131,9 @@ void XDGPaymentIOS::PayWithWeb(
 					FString serverId,		
 					FString extras){
     //空,安卓才有网页支付
+
+    //测试代码
+    [XDGCoreService clearAllUserDefaultsData]; 
 }
 
 

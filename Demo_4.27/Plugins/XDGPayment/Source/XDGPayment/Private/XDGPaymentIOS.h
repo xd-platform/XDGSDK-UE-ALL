@@ -12,6 +12,8 @@
 #import <XDPaymentSDK/XDGPayment.h>
 #import <XDPaymentSDK/XDGProductInfo.h>
 #import <XDCommonSDK/NSDictionary+TDSGlobalJson.h>
+#import <XDCommonSDK/XDGCoreService.h>
+
 
 /**
  * 
