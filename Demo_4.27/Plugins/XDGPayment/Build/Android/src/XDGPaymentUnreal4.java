@@ -29,14 +29,7 @@ public class XDGPaymentUnreal4 {
     private static final String TAG = "XDGPayment Log:";
 
     public static void payWithProduct(String orderId, String productId, String roleId, String serverId, String ext) {
-        //测试代码---start
-            orderId = "";
-            if (XDGCommonUnreal4.tmpActivity != null) {
-                SharedPreferences preferences = XDGCommonUnreal4.tmpActivity.getPreferences(0);
-                roleId = preferences.getString("demo_tmp_sp_userId", "");
-                print("payment saved userId: " + roleId);
-            }
-        //测试代码---end
+ 
 
         final String oid = orderId;
         final String rid = roleId;
@@ -112,14 +105,7 @@ public class XDGPaymentUnreal4 {
                                     String roleId,
                                     String serverId,
                                     String extras) {
-         //测试代码---start
-            if (XDGCommonUnreal4.tmpActivity != null) {
-                orderId = "";
-                SharedPreferences preferences = XDGCommonUnreal4.tmpActivity.getPreferences(0);
-                roleId = preferences.getString("demo_tmp_sp_userId", "");
-                print("payment saved userId: " + roleId);
-            }
-        //测试代码---end
+
 
 
         final String rid = roleId;
