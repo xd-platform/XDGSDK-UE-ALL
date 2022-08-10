@@ -59,7 +59,7 @@ void XDGCommonIOS::InitSDK(){
         };
         
         NSString* result = resultDic.tdsglobal_jsonString;
-        FXDGCommonModule::OnXDGSDKInitSucceed.Broadcast((bool)success, UTF8_TO_TCHAR([result UTF8String]));
+        FXDGCommonModule::OnXDGSDKInitCompleted.Broadcast((bool)success, UTF8_TO_TCHAR([result UTF8String]));
     }];
 }
 
@@ -192,25 +192,22 @@ void XDGCommonIOS::SetCountryRegion(FString region){
 }
 
 void XDGCommonIOS::DevelopInit(int32 num){
-    //测试代码--start 
-        
-        NSLog(@"初始化num: %d", num);
-        if(num == 0){ //海外正式
 
-        }else if(num == 1){ //海外测试
-            [XDGCoreService setDevelopUrl]; 
-            
-        }else if(num == 2){ //国内正式
-            [XDGCoreService clearAllUserDefaultsData]; 
-            [XDGCoreService updateConfigFileName:@"XDConfig-cn.json"]; 
-            
-        }else if(num == 3){ //国内测试
-            [XDGCoreService clearAllUserDefaultsData]; 
-            [XDGCoreService updateConfigFileName:@"XDConfig-cn.json"]; 
-            [XDGCoreService setDevelopUrl]; 
-        }
-        XDGCommonIOS::InitSDK();
-    //测试代码--end
+}
+
+void XDGCommonIOS::TrackAchievement(){
+    [XDGTrackerManager trackAchievement];
+     NSLog(@"点击 TrackAchievement");
+}
+
+void XDGCommonIOS::EventCompletedTutorial(){
+    [XDGTrackerManager eventCompletedTutorial];
+     NSLog(@"点击 EventCompletedTutorial");
+}
+
+void XDGCommonIOS::EventCreateRole(){
+    [XDGTrackerManager eventCreateRole];
+     NSLog(@"点击 EventCreateRole");
 }
 
 

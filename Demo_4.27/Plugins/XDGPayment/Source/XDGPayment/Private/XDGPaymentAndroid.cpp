@@ -159,6 +159,42 @@ void XDGPaymentAndroid::PayWithWeb( FString orderId,
 }
 
 
+void XDGPaymentAndroid::PurchaseToken(FString transactionIdentifier,
+                                        FString productIdentifier,
+                                        FString orderId,
+                                        FString roleId,
+                                        FString serverId,
+                                        FString ext){
+    JNIEnv *env = FAndroidApplication::GetJavaEnv();
+    auto jXDSDKUnreal4Class = FAndroidApplication::FindJavaClass(UNREAL4_CLASS_NAME_PAYMENT);
+    if (jXDSDKUnreal4Class)
+    {
+        const char *strMethod = "restorePurchase";
+        auto jMethod = env->GetStaticMethodID(jXDSDKUnreal4Class, strMethod,
+                                              "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+        if (jMethod)
+        {
+            auto jPurchaseToken = env->NewStringUTF(TCHAR_TO_ANSI(*transactionIdentifier));
+            auto jProductId = env->NewStringUTF(TCHAR_TO_ANSI(*productIdentifier));
+            auto jOrderId = env->NewStringUTF(TCHAR_TO_ANSI(*orderId));
+            auto jRoleId = env->NewStringUTF(TCHAR_TO_ANSI(*roleId));
+            auto jServerId = env->NewStringUTF(TCHAR_TO_ANSI(*serverId));
+            auto jExt = env->NewStringUTF(TCHAR_TO_ANSI(*ext));
+
+            env->CallStaticVoidMethod(jXDSDKUnreal4Class, jMethod, jPurchaseToken, jProductId, jOrderId, jRoleId, jServerId, jExt);
+
+            env->DeleteLocalRef(jPurchaseToken);
+            env->DeleteLocalRef(jProductId);
+            env->DeleteLocalRef(jOrderId);
+            env->DeleteLocalRef(jRoleId);
+            env->DeleteLocalRef(jServerId);
+            env->DeleteLocalRef(jExt);
+        }
+    }
+    env->DeleteLocalRef(jXDSDKUnreal4Class);
+}
+
+
 #ifdef __cplusplus
 extern "C"
 {

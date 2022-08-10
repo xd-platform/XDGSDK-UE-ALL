@@ -14,7 +14,7 @@ git remote rm $remoteRepo
 
 
 if [ $isRelease = true ]; then
-   git remote add $remoteRepo git@github.com:xd-platform/XDGSDK-UE4.git
+   git remote add $remoteRepo git@github.com:xd-platform/XDGSDK-UE-ALL.git
 else
    git remote add $remoteRepo git@github.com:suguiming/XDGSDK-UE4.git
 fi;

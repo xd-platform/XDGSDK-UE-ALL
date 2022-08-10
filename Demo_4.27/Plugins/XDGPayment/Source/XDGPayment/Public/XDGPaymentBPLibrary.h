@@ -42,5 +42,13 @@ class XDGPAYMENT_API UXDGPaymentBPLibrary : public UBlueprintFunctionLibrary
 							FString roleId,
 							FString serverId,		
 							FString extras);
+
+	UFUNCTION(BlueprintCallable, Category = "XDGPayment")
+	static void PurchaseToken(FString transactionIdentifier,
+								FString productIdentifier,
+								FString orderId,
+								FString roleId,
+								FString serverId,
+								FString ext);
 	
 };

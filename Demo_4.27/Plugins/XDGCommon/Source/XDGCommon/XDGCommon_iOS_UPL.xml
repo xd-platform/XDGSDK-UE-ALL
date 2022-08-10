@@ -14,12 +14,7 @@
   <iosPListUpdates>
     <addElements tag="dict" once="true">
 
-      <!-- //测试代码   iOS设置测试环境 -->
-      <key>isTestMode</key>
-	    <true/>
-
-
-      <!-- 文案可以修改成自己想要的，不要IDFA可以不加对应的描述配置 -->
+      <!-- 可选：1.文案可以修改成自己想要的，2.不要IDFA 不可以 加对应的描述配置 -->
         <key>NSCameraUsageDescription</key>
         <string>想要使用相机</string>
         <key>NSMicrophoneUsageDescription</key>
@@ -29,7 +24,7 @@
         <key>NSUserTrackingUsageDescription</key> 
         <string>想要获取IDFA</string>
       
-      <!-- 注意，要把下面的 CFBundleURLSchemes 对应的值，配置成自己的参数  -->
+      <!-- 可选：要把下面的 CFBundleURLSchemes 对应的值配置成自己的参数，第三方登录用，没有可以删除对应配置  -->
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
@@ -122,9 +117,11 @@
           </dict>
         </array>
 
+        <!-- 可选，有就配成游戏参数，不需要可以删除 -->
         <key>FacebookAppID</key>
         <string>333676195299012</string>
         
+        <!-- 可选，有就配成游戏参数，不需要可以删除 -->
         <key>FacebookClientToken</key>
         <string>52372eb46fd7343e588160c51ca0955d</string>
         

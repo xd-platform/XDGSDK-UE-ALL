@@ -62,12 +62,6 @@ void XDGPaymentIOS::PayWithProduct(FString orderId,
            NSString* pid = productId.GetNSString();
            NSString* rid = roleId.GetNSString();     
 
-           //测试代码---start
-            oid = @"";
-            NSUserDefaults* df = [NSUserDefaults standardUserDefaults];
-            rid = [df objectForKey:@"demo_tmp_userId"];
-            NSLog(@"payment saved userId df get:%@", rid);
-           //测试代码---end
 
         [XDGPayment payWithOrderId:oid productId:pid roleId:rid serverId:serverId.GetNSString() ext:ext.GetNSString() completionHandler:^(XDGOrderInfo * _Nonnull orderInfo, NSError * _Nonnull error) {
             [XDGUE4PaymentTool bridgePayCallback:orderInfo error:error];
@@ -131,6 +125,28 @@ void XDGPaymentIOS::PayWithWeb(
 					FString serverId,		
 					FString extras){
     //空,安卓才有网页支付
+
+
+}
+
+void XDGPaymentIOS::PurchaseToken(FString transactionIdentifier,
+                            FString productIdentifier,
+                            FString orderId,
+                            FString roleId,
+                            FString serverId,
+                            FString ext){
+    NSLog(@"点击 transactionIdentifier  %@", transactionIdentifier.GetNSString());
+
+     dispatch_async(dispatch_get_main_queue(), ^{
+         XDGTransactionInfo *transInfo = [[XDGTransactionInfo alloc] init];
+        [transInfo setValue:transactionIdentifier.GetNSString() forKey:@"transactionIdentifier"];
+        [transInfo setValue:productIdentifier.GetNSString() forKey:@"productIdentifier"];
+        
+        [XDGPayment restorePurchase:transInfo orderId:orderId.GetNSString() roleId:roleId.GetNSString() serverId:serverId.GetNSString() ext:ext.GetNSString() completionHandler:^(XDGOrderInfo * _Nonnull orderInfo, NSError * _Nonnull error) {
+            [XDGUE4PaymentTool bridgePayCallback:orderInfo error:error];
+        }];
+    });                                 
+   
 }
 
 

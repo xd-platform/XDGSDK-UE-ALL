@@ -289,25 +289,22 @@ public class XDGCommonUnreal4 {
 
 
     public static void developInit(final Activity activity, int num) {
-        //测试代码--start
-            print("初始化SDK num: " + num);
-            tmpActivity = activity;
-            if(num == 0){  //海外正式
-    
-            }else if (num == 1){ //海外测试
-                EnvHelper.setApiEnv(EnvHelper.EnvEnum.Dev);
+  
+    }
 
-            }else if (num == 2){ //国内正式
-                EnvHelper.updateConfigFileName("XDConfig-cn.json");
-                
-            }else if (num == 3){ //国内测试
-                EnvHelper.setApiEnv(EnvHelper.EnvEnum.Dev);
-                EnvHelper.updateConfigFileName("XDConfig-cn.json");
-            }
+    public static void trackAchievement() {
+        print("点击 trackAchievement");
+        XDGSDK.trackAchievement();
+    }
 
-            EnvHelper.setLogDebuggable(true);
-            initSDK(activity);
-        //测试代码--start
+    public static void eventCompletedTutorial() {
+        print("点击 eventCompletedTutorial");
+        XDGSDK.eventCompletedTutorial();
+    }
+
+    public static void eventCreateRole() {
+        print("点击 eventCreateRole");
+        XDGSDK.eventCreateRole();
     }
 
 

@@ -12,6 +12,8 @@
 #import <XDPaymentSDK/XDGPayment.h>
 #import <XDPaymentSDK/XDGProductInfo.h>
 #import <XDCommonSDK/NSDictionary+TDSGlobalJson.h>
+#import <XDCommonSDK/XDGCoreService.h>
+
 
 /**
  * 
@@ -46,6 +48,13 @@ public:
 					FString roleId,
 					FString serverId,		
 					FString extras);
+
+	void PurchaseToken(FString transactionIdentifier,
+					FString productIdentifier,
+					FString orderId,
+					FString roleId,
+					FString serverId,
+					FString ext);				
     
 };
 

@@ -16,7 +16,7 @@ class DEMO_API ADemoGameModeBase : public AGameModeBase
 	virtual void BeginPlay() override;
 
     //XDGCommon
-	void OnXDGSDKInitSucceed(const bool, const FString&);
+	void OnXDGSDKInitCompleted(const bool, const FString&);
 
     void OnXDGSDKGetXDGInfoJsonCompleted(const FString&);
 

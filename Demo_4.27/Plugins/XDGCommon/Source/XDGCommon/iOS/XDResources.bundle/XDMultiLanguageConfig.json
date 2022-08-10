@@ -1199,7 +1199,7 @@
     "tds_refund_success": "Bổ sung thành công",
     "tds_refund_fail": "Bổ sung thất bại",
     "tds_refund_cancel": "Đã hủy bổ sung",
-    "tds_refund_action": "Thanh toán bổ sung",
+    "tds_refund_action": "Bù đơn",
     "tds_refund_login_restrict_title": "Tạm thời không thể vào trò chơi",
     "tds_refund_login_restrict_sub_title": "Vui lòng thanh toán bổ sung tất cả các khoản hoàn tiền để vào trò chơi",
     "tds_refund_ios_pay_tip": "Bạn còn khoản hoàn tiền, không thể thanh toán bổ sung trong hệ thống này. Vui lòng đăng nhập vào trò chơi bằng hệ thống iOS để thực hiện thanh toán.",

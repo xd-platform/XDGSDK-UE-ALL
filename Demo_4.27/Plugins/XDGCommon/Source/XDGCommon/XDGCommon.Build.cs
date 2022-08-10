@@ -271,10 +271,7 @@ public class XDGCommon : ModuleRules
 				AdditionalBundleResources.Add(new BundleResource(Path.Combine(ModuleDirectory, "./iOS/LineSDKResource.bundle")));
 				AdditionalBundleResources.Add(new BundleResource(Path.Combine(ModuleDirectory, "./iOS/XDResources.bundle")));
 				AdditionalBundleResources.Add(new BundleResource(Path.Combine(ModuleDirectory, "./iOS/GoogleService-Info.plist")));
-
 				AdditionalBundleResources.Add(new BundleResource(Path.Combine(ModuleDirectory, "./Configs/XDConfig.json")));
-				AdditionalBundleResources.Add(new BundleResource(Path.Combine(ModuleDirectory, "./Configs/XDConfig-cn.json")));
-
 
                 // Add framework
                 PublicAdditionalFrameworks.Add(

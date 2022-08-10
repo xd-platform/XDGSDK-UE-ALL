@@ -56,3 +56,12 @@ void UXDGPaymentBPLibrary::PayWithWeb(
     GetXDGPaymentBridge()->PayWithWeb(orderId, productId, productName, payAmount, roleId, serverId, extras);                                       
 }
 
+
+void UXDGPaymentBPLibrary::PurchaseToken(FString transactionIdentifier,
+                                        FString productIdentifier,
+                                        FString orderId,
+                                        FString roleId,
+                                        FString serverId,
+                                        FString ext){
+    GetXDGPaymentBridge()->PurchaseToken(transactionIdentifier, productIdentifier, orderId, roleId, serverId, ext);
+}

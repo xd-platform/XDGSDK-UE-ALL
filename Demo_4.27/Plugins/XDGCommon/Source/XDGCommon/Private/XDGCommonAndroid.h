@@ -48,5 +48,9 @@ public:
 	void SetCountryRegion(FString region);
 
 	void DevelopInit(int32 num);
+
+	void TrackAchievement();
+	void EventCompletedTutorial();
+	void EventCreateRole();
 };
 #endif 

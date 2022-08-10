@@ -22,14 +22,14 @@ public:
             return FModuleManager::Get().IsModuleLoaded( "XDGCommon" );
       }
 
-	DECLARE_MULTICAST_DELEGATE_TwoParams(FXDGSDKInitSucceed, const bool, const FString&);
+	DECLARE_MULTICAST_DELEGATE_TwoParams(FXDGSDKInitCompleted, const bool, const FString&);
 	DECLARE_MULTICAST_DELEGATE_OneParam(FXDGSDKShareCompleted, const int32);
     DECLARE_MULTICAST_DELEGATE_FourParams(FXDGSDKGetRegionInfoCompleted, const FString&, const FString&, const FString&, const FString&);
     DECLARE_MULTICAST_DELEGATE_OneParam(FXDGSDKGetXDGInfoJsonCompleted, const FString&);
    
 
     UPROPERTY(BlueprintAssignable, Category = "XDGCommon")
-    static FXDGSDKInitSucceed OnXDGSDKInitSucceed;
+    static FXDGSDKInitCompleted OnXDGSDKInitCompleted;
 
 	UPROPERTY(BlueprintAssignable, Category = "XDGCommon")
     static FXDGSDKShareCompleted OnXDGSDKShareCompleted;

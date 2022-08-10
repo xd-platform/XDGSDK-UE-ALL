@@ -32,7 +32,11 @@ public:
 	virtual void DisableAgreementUI() = 0;
 	virtual void SetCountryRegion(FString region) = 0; //设置地区 HK US等
 
-	virtual void DevelopInit(int32 num) = 0; //设置测试环境url初始化,开发测试用，发布版里面实现会注销
+	virtual void DevelopInit(int32 num) = 0; 
+
+	virtual void TrackAchievement() = 0;
+	virtual void EventCompletedTutorial() = 0;
+	virtual void EventCreateRole() = 0;
 	
 };
 
