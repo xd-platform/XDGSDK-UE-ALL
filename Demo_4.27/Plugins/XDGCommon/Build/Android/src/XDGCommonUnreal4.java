@@ -292,6 +292,21 @@ public class XDGCommonUnreal4 {
   
     }
 
+    public static void trackAchievement() {
+        print("点击 trackAchievement");
+        XDGSDK.trackAchievement();
+    }
+
+    public static void eventCompletedTutorial() {
+        print("点击 eventCompletedTutorial");
+        XDGSDK.eventCompletedTutorial();
+    }
+
+    public static void eventCreateRole() {
+        print("点击 eventCreateRole");
+        XDGSDK.eventCreateRole();
+    }
+
 
     // 下面是与SDK无关方法
     public static void onCreate(final Activity activity) {

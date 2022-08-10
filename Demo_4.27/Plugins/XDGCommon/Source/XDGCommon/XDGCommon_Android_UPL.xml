@@ -110,7 +110,7 @@
                 implementation 'com.android.billingclient:billing:3.0.0'
                 implementation 'org.conscrypt:conscrypt-android:2.2.1'
                 implementation "com.android.installreferrer:installreferrer:2.2"
-
+ 
                 <!-- firebase -->
                 implementation "com.google.firebase:firebase-core:18.0.0"
 				implementation "com.google.firebase:firebase-messaging:21.1.0"

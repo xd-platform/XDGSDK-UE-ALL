@@ -76,4 +76,14 @@ class XDGCOMMON_API UXDGCommonBPLibrary : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, Category = "XDGCommon")
 	static void DevelopInit(int32 num); 
 
+
+	UFUNCTION(BlueprintCallable, Category = "XDGCommon")
+	static void TrackAchievement();
+
+	UFUNCTION(BlueprintCallable, Category = "XDGCommon")
+	static void EventCompletedTutorial();
+
+	UFUNCTION(BlueprintCallable, Category = "XDGCommon")
+	static void EventCreateRole();
+
 };

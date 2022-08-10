@@ -59,7 +59,7 @@ void XDGCommonIOS::InitSDK(){
         };
         
         NSString* result = resultDic.tdsglobal_jsonString;
-        FXDGCommonModule::OnXDGSDKInitSucceed.Broadcast((bool)success, UTF8_TO_TCHAR([result UTF8String]));
+        FXDGCommonModule::OnXDGSDKInitCompleted.Broadcast((bool)success, UTF8_TO_TCHAR([result UTF8String]));
     }];
 }
 
@@ -193,6 +193,21 @@ void XDGCommonIOS::SetCountryRegion(FString region){
 
 void XDGCommonIOS::DevelopInit(int32 num){
 
+}
+
+void XDGCommonIOS::TrackAchievement(){
+    [XDGTrackerManager trackAchievement];
+     NSLog(@"点击 TrackAchievement");
+}
+
+void XDGCommonIOS::EventCompletedTutorial(){
+    [XDGTrackerManager eventCompletedTutorial];
+     NSLog(@"点击 EventCompletedTutorial");
+}
+
+void XDGCommonIOS::EventCreateRole(){
+    [XDGTrackerManager eventCreateRole];
+     NSLog(@"点击 EventCreateRole");
 }
 
 

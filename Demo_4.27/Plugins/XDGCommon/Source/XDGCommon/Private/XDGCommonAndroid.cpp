@@ -368,6 +368,56 @@ void XDGCommonAndroid::DevelopInit(int32 num){
 } 
 
 
+void XDGCommonAndroid::TrackAchievement(){
+    JNIEnv *env = FAndroidApplication::GetJavaEnv();
+    auto jXDSDKUnreal4Class = FAndroidApplication::FindJavaClass(UNREAL4_CLASS_NAME_COMMON);
+    if (jXDSDKUnreal4Class)
+    {
+        const char *strMethod = "trackAchievement";
+        auto jMethod = env->GetStaticMethodID(jXDSDKUnreal4Class, strMethod,
+                                              "()V");
+        if (jMethod)
+        {
+            env->CallStaticVoidMethod(jXDSDKUnreal4Class, jMethod);
+        }
+    }
+    env->DeleteLocalRef(jXDSDKUnreal4Class);   
+}
+
+
+void XDGCommonAndroid::EventCompletedTutorial(){
+    JNIEnv *env = FAndroidApplication::GetJavaEnv();
+    auto jXDSDKUnreal4Class = FAndroidApplication::FindJavaClass(UNREAL4_CLASS_NAME_COMMON);
+    if (jXDSDKUnreal4Class)
+    {
+        const char *strMethod = "eventCompletedTutorial";
+        auto jMethod = env->GetStaticMethodID(jXDSDKUnreal4Class, strMethod,
+                                              "()V");
+        if (jMethod)
+        {
+            env->CallStaticVoidMethod(jXDSDKUnreal4Class, jMethod);
+        }
+    }
+    env->DeleteLocalRef(jXDSDKUnreal4Class);   
+}
+
+
+void XDGCommonAndroid::EventCreateRole(){
+    JNIEnv *env = FAndroidApplication::GetJavaEnv();
+    auto jXDSDKUnreal4Class = FAndroidApplication::FindJavaClass(UNREAL4_CLASS_NAME_COMMON);
+    if (jXDSDKUnreal4Class)
+    {
+        const char *strMethod = "eventCreateRole";
+        auto jMethod = env->GetStaticMethodID(jXDSDKUnreal4Class, strMethod,
+                                              "()V");
+        if (jMethod)
+        {
+            env->CallStaticVoidMethod(jXDSDKUnreal4Class, jMethod);
+        }
+    }
+    env->DeleteLocalRef(jXDSDKUnreal4Class);   
+}
+
 
 
 #ifdef __cplusplus
@@ -391,7 +441,7 @@ extern "C"
         const char *cResult = jenv->GetStringUTFChars(result, 0);
         FString fResult = UTF8_TO_TCHAR(cResult);
 
-        FXDGCommonModule::OnXDGSDKInitSucceed.Broadcast((bool)success, fResult);
+        FXDGCommonModule::OnXDGSDKInitCompleted.Broadcast((bool)success, fResult);
 
         jenv->ReleaseStringUTFChars(result, cResult);
     }

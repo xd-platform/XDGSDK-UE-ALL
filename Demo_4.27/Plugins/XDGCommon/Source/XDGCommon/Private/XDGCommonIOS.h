@@ -55,6 +55,10 @@ public:
 
 	void DevelopInit(int32 num);
 
+	void TrackAchievement();
+	void EventCompletedTutorial();
+	void EventCreateRole();
+
 };
 
 @interface XDGUE4CommonTool : NSObject

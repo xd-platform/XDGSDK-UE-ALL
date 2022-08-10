@@ -48,6 +48,13 @@ public:
 					FString roleId,
 					FString serverId,		
 					FString extras);
+
+	void PurchaseToken(FString transactionIdentifier,
+					FString productIdentifier,
+					FString orderId,
+					FString roleId,
+					FString serverId,
+					FString ext);				
     
 };
 

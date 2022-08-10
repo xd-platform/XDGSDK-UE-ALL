@@ -32,7 +32,13 @@ public:
 							FString roleId,
 							FString serverId,		
 							FString extras) = 0;
-
+    
+	virtual void PurchaseToken(FString transactionIdentifier,
+								FString productIdentifier,
+								FString orderId,
+								FString roleId,
+								FString serverId,
+								FString ext) = 0;
 
 };
 

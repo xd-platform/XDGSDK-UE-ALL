@@ -177,6 +177,31 @@ public class XDGPaymentUnreal4 {
         }
     }
 
+
+
+    public static void restorePurchase(String restorePurchase, String productId, String orderId, String roleId, String serverId, String ext) {
+        Log.i(TAG, "restorePurchase:" + restorePurchase + " productId:" + productId + " role:" + roleId + " serverId:"
+                + serverId + " ext:" + ext);
+
+        XDGTransactionInfo info = new XDGTransactionInfo();
+        info.purchaseToken = restorePurchase;
+        info.productId = productId;
+        info.orderId = orderId;
+
+        PurchaseDetails replenishmentOrderPurchaseDetails = new PurchaseDetails();
+        replenishmentOrderPurchaseDetails.purchaseToken = restorePurchase;
+        replenishmentOrderPurchaseDetails.productId = productId;
+        info.replenishmentOrderPurchaseDetails = replenishmentOrderPurchaseDetails;
+        
+        XDGPayment.restorePurchase(info, orderId, productId, roleId, serverId, ext, new XDGPaymentCallback<Object>() {
+            @Override
+            public void onPaymentCallback(XDGPaymentResult result, Object data) {
+                handlerOrderInfoToBridge(orderId, productId, roleId, serverId, result.code, result.debugMessage);
+
+            }
+        });
+    }
+
     private static void print(String msg) {
         Log.i("==XDGSDK==P", msg);
     }

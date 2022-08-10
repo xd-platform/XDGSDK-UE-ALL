@@ -33,6 +33,10 @@ public:
 	virtual void SetCountryRegion(FString region) = 0; //设置地区 HK US等
 
 	virtual void DevelopInit(int32 num) = 0; 
+
+	virtual void TrackAchievement() = 0;
+	virtual void EventCompletedTutorial() = 0;
+	virtual void EventCreateRole() = 0;
 	
 };
 

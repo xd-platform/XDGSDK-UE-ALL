@@ -99,3 +99,15 @@ void UXDGCommonBPLibrary::SetCountryRegion(FString region){
  void UXDGCommonBPLibrary::DevelopInit(int32 num){
     GetXDGCommonBridge()->DevelopInit(num);
  }
+
+void UXDGCommonBPLibrary::TrackAchievement(){
+    GetXDGCommonBridge()->TrackAchievement();
+}
+
+void UXDGCommonBPLibrary::EventCompletedTutorial(){
+    GetXDGCommonBridge()->EventCompletedTutorial();
+}
+
+void UXDGCommonBPLibrary::EventCreateRole(){
+    GetXDGCommonBridge()->EventCreateRole();
+}

@@ -8,7 +8,7 @@
 
 void ADemoGameModeBase::BeginPlay(){
     //XDGCommon
-    FXDGCommonModule::OnXDGSDKInitSucceed.AddUObject(this, &ADemoGameModeBase::OnXDGSDKInitSucceed);
+    FXDGCommonModule::OnXDGSDKInitCompleted.AddUObject(this, &ADemoGameModeBase::OnXDGSDKInitCompleted);
     FXDGCommonModule::OnXDGSDKShareCompleted.AddUObject(this, &ADemoGameModeBase::OnXDGSDKShareCompleted);
     FXDGCommonModule::OnXDGSDKGetRegionInfoCompleted.AddUObject(this, &ADemoGameModeBase::OnXDGSDKGetRegionInfoCompleted);
     FXDGCommonModule::OnXDGSDKGetXDGInfoJsonCompleted.AddUObject(this, &ADemoGameModeBase::OnXDGSDKGetXDGInfoJsonCompleted);
@@ -38,9 +38,9 @@ void ADemoGameModeBase::BeginPlay(){
 }
 
 //XDGCommon
-void ADemoGameModeBase::OnXDGSDKInitSucceed(const bool success, const FString& result){
-    UE_LOG(LogTemp, Log, TEXT("点击了 OnXDGSDKInitSucceed"));
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("OnXDGSDKInitSucceed: " + FString::FromInt(success) + result));
+void ADemoGameModeBase::OnXDGSDKInitCompleted(const bool success, const FString& result){
+    UE_LOG(LogTemp, Log, TEXT("点击了 OnXDGSDKInitCompleted"));
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("OnXDGSDKInitCompleted: " + FString::FromInt(success) + result));
 }
 
 void ADemoGameModeBase::OnXDGSDKGetXDGInfoJsonCompleted(const FString& result){
