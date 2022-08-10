@@ -140,7 +140,7 @@ public class XDGAccountUnreal4 {
                 nativeOnXDGSDKGetUserFailed(code, msg);
             }
 
-            print("失败: code = " + code + "  msg = " + msg + " data: " + BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap()));
+            print("邮箱失败: code = " + code + "  msg = " + msg + " data: " + BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap()));
         }
     }
 
