@@ -134,13 +134,13 @@ public class XDGAccountUnreal4 {
             String msg = tdsServerError.getMessage();
 
             if (isLogin) { // 登录失败
-                nativeOnXDGSDKLoginFailed(code, msg, BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap().toString()));
+                nativeOnXDGSDKLoginFailed(code, msg, BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap()));
 
             } else {// 获取用户失败
                 nativeOnXDGSDKGetUserFailed(code, msg);
             }
 
-            print("邮箱失败: code = " + code + "  msg = " + msg + " data: " + BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap().toString()));
+            print("邮箱失败: code = " + code + "  msg = " + msg + " data: " + BridgeJsonHelper.object2JsonString(tdsServerError.getErrorDataMap()));
         }
     }
 
