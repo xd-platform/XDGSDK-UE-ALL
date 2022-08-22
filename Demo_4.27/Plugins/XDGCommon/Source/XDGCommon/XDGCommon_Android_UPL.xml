@@ -99,9 +99,9 @@
                 flatDir{ dirs 'src/main/libs/' }
             }
             dependencies { 
-                implementation(name: 'XDGCommon_6.5.0',ext:'aar')
-                implementation(name: 'XDGThirdLogin_6.5.0',ext:'aar')
-                implementation(name: 'XDGThirdTrack_6.5.0',ext:'aar')
+                implementation(name: 'XDGCommon_6.5.1',ext:'aar')
+                implementation(name: 'XDGThirdLogin_6.5.1',ext:'aar')
+                implementation(name: 'XDGThirdTrack_6.5.1',ext:'aar')
 
                 implementation(name: 'sdk_android_oaid_oaid_sdk_1.0.23',ext:'aar')
                 implementation(name: 'reactor-0.0.8.5',ext:'aar')
