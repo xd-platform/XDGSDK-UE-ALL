@@ -18,5 +18,9 @@ class DEMO_API UDemoBPLibrary : public UBlueprintFunctionLibrary
 	UFUNCTION(BlueprintCallable, Category = "XDGDemo")
     static void OpenMoment();
 
+	//篝火接口测试
+	UFUNCTION(BlueprintCallable, Category = "XDGDemo")
+	static void GetTestQualification();
+
 
 };
