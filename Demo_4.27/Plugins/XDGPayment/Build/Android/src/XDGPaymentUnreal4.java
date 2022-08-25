@@ -23,6 +23,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+import android.text.TextUtils;
 
 public class XDGPaymentUnreal4 {
 
@@ -30,6 +32,9 @@ public class XDGPaymentUnreal4 {
 
     public static void payWithProduct(String orderId, String productId, String roleId, String serverId, String ext) {
  
+        if (TextUtils.isEmpty(orderId)) {
+            orderId = UUID.randomUUID().toString();
+        }
 
         final String oid = orderId;
         final String rid = roleId;
@@ -107,6 +112,9 @@ public class XDGPaymentUnreal4 {
                                     String extras) {
 
 
+        if (TextUtils.isEmpty(orderId)) {
+            orderId = UUID.randomUUID().toString();
+        }
 
         final String rid = roleId;
         print("网页支付参数:   orderId:" + orderId + " productId:" + productId + " productName: " + productName + " payAmount: " + payAmount +" rid: " + rid +" serverId: " + serverId +" extras: " + extras);
